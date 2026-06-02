@@ -2,58 +2,24 @@
   <img src="hero/hero-card.png" alt="zhongcai-skills" width="800">
 </p>
 
-# zhongcai-skills · 仲裁员标准化执业技能体系
-
-> **持经纬以度之，秉绳墨以成之。**  
-> 一个面向仲裁员和法务从业者的 AI Agent Skill 集合，覆盖案件处理全流程与复杂决策全链路。
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Agent Skills](https://img.shields.io/badge/Agent-Skills-blue)](https://github.com/binbin2896/zhongcai-skills)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/binbin2896/zhongcai-skills/pulls)
+## 在确定性与不确定性之间，寻找可复用的结构。
+**I build tools that turn fuzzy problems into clear decisions.**
 
 ---
 
-## 📦 项目结构
+### ⛓️ [经纬](https://github.com/binbin2896/zhongcai-skills) — 仲裁执业技能链
+
+从收案到归档的全流程标准化工作流。每起案件按此链执行，确保庭前准备充分、庭审提问精准、裁决书结构严谨、司法审查无虞、经验沉淀入库。
 
 ```
-zhongcai-skills/
-├── README.md
-├── .gitignore
-│
-├── skills/                               ← 核心 Skill 定义
-│   ├── arbitration-master/    (经纬)     ← 入口编排，路由到各子skill
-│   ├── arbitration-reading/   (阅卷)     ← 庭前阅卷 · 三层五要素法
-│   ├── arbitration-hearing/   (问庭)     ← 庭审问题清单生成
-│   ├── arbitration-drafting/  (裁笔)     ← 裁决书草拟 · 九段式结构
-│   ├── arbitration-review/    (校核)     ← 三十项风险校核 · 程序合规
-│   ├── arbitration-risk/      (防讼)     ← 司法审查风险预演 · Premortem
-│   └── arbitration-archive/   (案归)     ← 案件复盘 · 经验入库
-│
-├── docs/
-│   ├── writing-templates/                ← 8 份标准化模板
-│   └── case-examples/                    ← 8 个精析案例
-│
-└── hero/
-    └── hero-card.png                     ← 项目形象卡片
+经纬（入口编排）
+├─ 阅卷 → 庭前阅卷 · 三层五要素法
+├─ 问庭 → 庭审问题清单 · 80+/60+ 题库
+├─ 裁笔 → 裁决书草拟 · 九段式结构 + 案例引用
+├─ 校核 → 三十项风险校核 · 程序合规性检查
+├─ 防讼 → 司法审查风险预演 · 撤裁事由排查
+└─ 案归 → 案件复盘 · 经验提炼 · 知识库入库
 ```
-
----
-
-## ⛓️ 系列一：经纬 · 仲裁执业技能链
-
-### 体系架构
-
-```
-经纬.skill（入口编排）
-├─ 阅卷.skill  → 庭前阅卷 · 三层五要素法
-├─ 问庭.skill  → 庭审问题清单 · 80+/60+ 题库
-├─ 裁笔.skill  → 裁决书草拟 · 九段式结构 + 案例引用
-├─ 校核.skill  → 三十项风险校核 · 程序合规性检查
-├─ 防讼.skill  → 司法审查风险预演 · 撤裁事由排查
-└─ 案归.skill  → 案件复盘 · 经验提炼 · 知识库入库
-```
-
-### 核心理念
 
 | 原则 | 说明 |
 |------|------|
@@ -62,37 +28,47 @@ zhongcai-skills/
 | **可校验** | 每个步骤有明确的输出物和质检标准 |
 | **可迭代** | 每案复盘反哺模板和知识库，形成飞轮 |
 
-### 适用场景
+#### 适用场景
 
-- 收到新案卷 → 走**阅卷.skill**做三层五要素梳理
-- 庭前准备 → 走**问庭.skill**生成针对性问题清单
-- 裁决书草拟 → 走**裁笔.skill**按九段式搭结构
-- 裁决书质检 → 走**校核.skill** + **防讼.skill**双重把关
-- 结案归档 → 走**案归.skill**提炼经验、反哺知识库
+- 收到新案卷 → 走**阅卷**做三层五要素梳理
+- 庭前准备 → 走**问庭**生成针对性问题清单
+- 裁决书草拟 → 走**裁笔**按九段式搭结构
+- 裁决书质检 → 走**校核** + **防讼**双重把关
+- 结案归档 → 走**案归**提炼经验、反哺知识库
 
 ---
 
-## 🧠 系列二：绳墨 · 思维工具链
+### 🧠 [绳墨](https://github.com/binbin2896/sheng-mo) — 思维工具链
 
-### 体系架构
-
-```
-绳墨.skill（编排入口）
-├─ 钩玄.skill  → 信息提炼 · 从万字信息中捞出核心
-├─ 纲目.skill  → 方向判断 · 一个判断 + 三个行动 + 排除项
-├─ 执要.skill  → 优先级排序 · 紧急 × 重要四象限
-├─ 拷问.skill  → 压力测试 · 八维度方案/内容质检
-└─ 笃行.skill  → 执行落地 · 可执行清单 + 风险预案
-```
+从信息提炼到执行落地，一条完整的思考方法论。
 
 > 典出《孟子·离娄上》：绳墨者，规矩方圆之至也。木工取直用绳墨，明辨事理出规矩。
 
-### 适用场景
+```
+绳墨（编排入口）
+├─ 钩玄 → 信息提炼 · 从万字信息中捞出核心
+├─ 纲目 → 方向判断 · 一个判断 + 三个行动 + 排除项
+├─ 执要 → 优先级排序 · 紧急 × 重要四象限
+├─ 拷问 → 压力测试 · 八维度方案/内容质检
+└─ 笃行 → 执行落地 · 可执行清单 + 风险预案
+```
 
-- 信息太多、问题模糊 → 走完整链：钩玄→纲目→拷问→笃行
-- 方案已定需质检 → 直接调**拷问.skill**
-- 结论已定需执行清单 → 直接调**笃行.skill**
-- 选项太多需排序 → 直接调**执要.skill**
+- [钩玄](https://github.com/binbin2896/sheng-mo/tree/main/gou-xuan) — 信息提炼：从万字信息中捞出三句话核心
+- [纲目](https://github.com/binbin2896/sheng-mo/tree/main/gang-mu) — 方向判断：一个核心判断，三个关键行动，一组排除项
+- [执要](https://github.com/binbin2896/sheng-mo/tree/main/zhi-yao) — 优先级排序：把"都要做"变成"只做三件最重要的"
+- [拷问](https://github.com/binbin2896/sheng-mo/tree/main/kao-wen) — 压力测试：方案与内容系统性质检框架
+- [笃行](https://github.com/binbin2896/sheng-mo/tree/main/du-xing) — 执行落地：把结论翻译成可执行清单
+
+#### 适用场景
+
+- 信息太多、问题模糊 → 走完整链：钩玄 → 纲目 → 拷问 → 笃行
+- 方案已定需质检 → 直接调**拷问**
+- 结论已定需执行清单 → 直接调**笃行**
+- 选项太多需排序 → 直接调**执要**
+
+---
+
+### 知其白，守其黑，为天下式。
 
 ---
 
@@ -143,7 +119,7 @@ cp -r skills/* ~/.hermes/skills/legal/
 
 ```
 用户：帮我处理这个仲裁案件——收到仲裁申请书和证据材料
-→ 经纬自动判断为庭前阶段 → 推荐加载阅卷.skill
+→ 经纬自动判断为庭前阶段 → 推荐加载阅卷
 
 用户：走一遍仲裁流程
 → 经纬按阅卷→问庭→裁笔→校核→防讼→案归顺序执行全流程
