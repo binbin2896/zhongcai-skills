@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>zhongcai-skills · 仲裁员标准化执业技能体系</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;700&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    background: #0a0a0a;
+    font-family: 'Noto Sans SC', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px;
+  }
+  
+  .card {
+    width: 960px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border-radius: 32px;
+    padding: 64px 56px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.8), 0 0 120px rgba(15,52,96,0.3);
+  }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(56,189,248,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  
+  .card::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(167,139,250,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .brand {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .brand-name {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 14px;
+    color: #38bdf8;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  
+  .brand-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: #f8fafc;
+    line-height: 1.2;
+  }
+  
+  .brand-subtitle {
+    font-size: 18px;
+    color: #94a3b8;
+    margin-top: 8px;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  
+  .badge {
+    background: rgba(56,189,248,0.12);
+    border: 1px solid rgba(56,189,248,0.25);
+    border-radius: 100px;
+    padding: 8px 20px;
+    font-size: 13px;
+    color: #38bdf8;
+    white-space: nowrap;
+  }
+  
+  .series-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 48px;
+  }
+  
+  .series-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 32px 28px;
+    transition: all 0.3s ease;
+  }
+  
+  .series-card:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(56,189,248,0.2);
+    transform: translateY(-2px);
+  }
+  
+  .series-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  
+  .series-name {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 6px;
+  }
+  
+  .series-ename {
+    font-size: 13px;
+    color: #64748b;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  
+  .series-desc {
+    font-size: 15px;
+    color: #94a3b8;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  
+  .chain-flow {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  
+  .chain-item {
+    background: rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 13px;
+    color: #cbd5e1;
+  }
+  
+  .chain-arrow {
+    color: #38bdf8;
+    font-size: 14px;
+  }
+  
+  .chain-merge {
+    font-size: 11px;
+    color: #64748b;
+    margin: 0 2px;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .footer-left {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .tag {
+    background: rgba(255,255,255,0.05);
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 12px;
+    color: #64748b;
+  }
+  
+  .footer-right {
+    font-size: 13px;
+    color: #475569;
+    letter-spacing: 1px;
+  }
+  
+  .stats {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 36px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stat-num {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #f1f5f9;
+  }
+  
+  .stat-label {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="header">
+    <div class="brand">
+      <div class="brand-name">BINBIN · 仲裁员技能体系</div>
+      <div class="brand-title">持经纬以度之<br>秉绳墨以成之</div>
+      <div class="brand-subtitle">Arbitrator Standardized Practice Skills</div>
+    </div>
+    <span class="badge">v1.0 · 开源公开</span>
+  </div>
+
+  <div class="stats">
+    <div class="stat-item">
+      <span class="stat-num">7</span>
+      <span class="stat-label">核心Skill</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">2</span>
+      <span class="stat-label">系列</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">16</span>
+      <span class="stat-label">模板文档</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">1</span>
+      <span class="stat-label">方法论体系</span>
+    </div>
+  </div>
+
+  <div class="series-grid">
+    <div class="series-card">
+      <div class="series-icon">⛓️</div>
+      <div class="series-name">经纬 · 仲裁执业技能链</div>
+      <div class="series-ename">JING WEI · Arbitration Practice Chain</div>
+      <div class="series-desc">
+        从收案到归档的全流程标准化工作流。每起案件按此链执行，确保庭前准备充分、庭审提问精准、裁决书结构严谨、司法审查无虞、经验沉淀入库。
+      </div>
+      <div class="chain-flow">
+        <span class="chain-item">阅卷</span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-item">问庭</span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-item">裁笔</span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-item">校核</span>
+        <span class="chain-merge">+</span>
+        <span class="chain-item">防讼</span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-item">案归</span>
+      </div>
+    </div>
+
+    <div class="series-card">
+      <div class="series-icon">🧠</div>
+      <div class="series-name">绳墨 · 思维工具链</div>
+      <div class="series-ename">SHENG MO · Thinking Tool Chain</div>
+      <div class="series-desc">
+        从混沌信息到清晰行动的完整流水线。自动编排信息提炼、方向判断、压力测试、执行落地四步，适配复杂决策场景。
+      </div>
+      <div class="chain-flow">
+        <span class="chain-item">钩玄</span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-item">纲目</span>
+        <span class="chain-arrow">┃</span>
+        <span class="chain-item">执要</span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-item">拷问</span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-item">笃行</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <span class="tag">AI Agent Skills</span>
+      <span class="tag">仲裁方法论</span>
+      <span class="tag">开源</span>
+    </div>
+    <div class="footer-right">github.com/binbin2896</div>
+  </div>
+</div>
+</body>
+</html>

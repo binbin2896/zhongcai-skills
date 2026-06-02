@@ -1,0 +1,19 @@
+# 排除达尔文优化相关文件
+results.tsv
+test-prompts.json
+
+# 系统文件
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
